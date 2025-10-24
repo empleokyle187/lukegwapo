@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Luke Kyle Empleo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      color: #fff;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+      position: relative;
+      font-size: 1.25rem;
+      padding-bottom: 60px; /* space for fixed footer */
+    }
+
+    /* Background Glow Animation */
+    body::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 20%, rgba(0,255,255,0.2), transparent 60%),
+                  radial-gradient(circle at 80% 80%, rgba(255,0,150,0.2), transparent 60%);
+      animation: backgroundGlow 10s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+
+    @keyframes backgroundGlow {
+      0% { transform: scale(1) translate(0, 0); }
+      100% { transform: scale(1.1) translate(-5%, -5%); }
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      padding: 1rem 3rem;
+      z-index: 10;
+      box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+    }
+
+    nav h2 {
+      color: #00e5ff;
+      font-size: 1.5rem;
+      text-shadow: 0 0 10px rgba(0,229,255,0.6);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #00e5ff;
+      transition: width 0.3s ease;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    nav ul li a:hover {
+      color: #00e5ff;
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    .section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 2rem;
+      z-index: 1;
+      margin-top: 7rem;
+      padding: 2rem;
+      max-width: 900px;
+    }
+
+    .section h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 15px rgba(255,255,255,0.3);
+    }
+
+    .section h2 {
+      color: #00e5ff;
+      font-size: 2rem;
+      margin-top: 2.5rem;
+      text-shadow: 0 0 10px rgba(0,229,255,0.6);
+    }
+
+    .section p {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      max-width: 750px;
+      margin: 0 auto 1.8rem;
+      opacity: 0.95;
+    }
+
+    .section span {
+      color: #00e5ff;
+      text-shadow: 0 0 20px rgba(0,229,255,0.8);
+    }
+
+    /* ===== FIXED FOOTER ===== */
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(6px);
+      padding: 0.8rem 0;
+      font-size: 1rem;
+      color: #fff;
+      box-shadow: 0 -2px 10px rgba(0,229,255,0.2);
+      z-index: 5;
+    }
+
+    footer p {
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .section {
+        margin-top: 4rem;
+      }
+
+      .section h1 {
+        font-size: 2.4rem;
+      }
+
+      .section h2 {
+        font-size: 1.6rem;
+      }
+
+      .section p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- ===== NAVIGATION BAR ===== -->
+  <nav>
+    <h2>Luke Kyle Empleo</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="skills.html">My Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== ABOUT ME SECTION ===== -->
+  <section class="section">
+    <h1>About Me</h1>
+
+    <h2>👨‍💻 Who I Am</h2>
+    <p>
+      Hi! Im <span>Luke Kyle Empleo</span>, 23 years old, and I live in Punta Princesa. 
+      Life here has shaped my perspective, and Im learning a lot about myself as I grow. 
+      Im constantly exploring new opportunities and figuring out what path to take. 
+      Its an exciting time of personal growth, and Im curious to see where it leads.
+    </p>
+
+    <h2>🚀 My Journey</h2>
+    <p>
+     My journey is one of growth and self-discovery, shaped by my experiences in Punta Princesa. 
+     At 23, Im learning more about my passions and strengths, figuring out the direction I want to take. 
+     Each step is a mix of challenges and opportunities, helping me become the person Im meant to be. 
+     Its an exciting process, and Im curious where it will lead.
+    </p>
+    <p>
+      My journey with learning HTML, CSS, and JavaScript has been a mix of challenges and excitement. 
+      Starting with the basics, Ive gradually built up my skills and gained more confidence in creating websites. 
+      Each new concept feels like a small victory, and the more I practice, the clearer the path ahead becomes. 
+      Its a process of constant learning, and Im excited to see how far I can take it.
+    </p>
+
+    <h2>🌎 Beyond the Code</h2>
+    <p>
+      Beyond the code, my journey with HTML, CSS, and JavaScript has taught me problem-solving, patience, and creativity. 
+      Its not just about writing lines of code, but about finding ways to bring ideas to life, making something functional and visually appealing. 
+      Ive learned to think critically and to approach challenges with a mindset of curiosity and persistence. 
+      As I continue to grow, the skills Im developing go beyond coding—theyre shaping how I approach projects, learning, and even life itself.
+    </p>
+    <p>
+      Outside of tech, I love playing basketball, music, and discovering new coffee spots. 
+      I believe inspiration can come from anywhere and thats what keeps my creativity flowing.
+    </p>
+  </section>
+
+  <!-- ===== FIXED FOOTER ===== -->
+  <footer>
+    <p>© 2025 Luke Kyle Empleo | Built with ❤️</p>
+  </footer>
+
+</body>
+</html>

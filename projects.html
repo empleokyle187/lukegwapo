@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects | Luke Kyle Empleo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      color: #fff;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+      position: relative;
+      font-size: 1.2rem;
+      padding-bottom: 60px; /* space for fixed footer */
+    }
+
+    /* Glowing Background Animation */
+    body::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 20%, rgba(0,255,255,0.2), transparent 60%),
+                  radial-gradient(circle at 80% 80%, rgba(255,0,150,0.2), transparent 60%);
+      animation: backgroundGlow 10s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+
+    @keyframes backgroundGlow {
+      0% { transform: scale(1) translate(0, 0); }
+      100% { transform: scale(1.1) translate(-5%, -5%); }
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      padding: 1rem 3rem;
+      z-index: 10;
+      box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+    }
+
+    nav h2 {
+      color: #00e5ff;
+      font-size: 1.5rem;
+      text-shadow: 0 0 10px rgba(0,229,255,0.6);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #00e5ff;
+      transition: width 0.3s ease;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    nav ul li a:hover {
+      color: #00e5ff;
+    }
+
+    /* ===== PROJECTS SECTION ===== */
+    .section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 1;
+      margin-top: 7rem;
+      padding: 2rem;
+      max-width: 1200px;
+    }
+
+    .section h1 {
+      font-size: 3.5rem;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 15px rgba(255,255,255,0.3);
+    }
+
+    /* Project Grid */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      width: 100%;
+      z-index: 1;
+    }
+
+    article.project-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(0, 229, 255, 0.3);
+      border-radius: 15px;
+      padding: 2rem;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    article.project-card::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(0,229,255,0.1), transparent 70%);
+      transform: scale(0);
+      transition: all 0.5s ease;
+      z-index: 0;
+    }
+
+    article.project-card:hover::before {
+      transform: scale(1);
+    }
+
+    article.project-card:hover {
+      transform: translateY(-10px);
+      border-color: #00e5ff;
+      box-shadow: 0 0 25px rgba(0,229,255,0.6);
+    }
+
+    article.project-card h3 {
+      font-size: 1.8rem;
+      color: #00e5ff;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px rgba(0,229,255,0.4);
+      font-weight: 600;
+      line-height: 1.2;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      hyphens: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    article.project-card p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(6px);
+      padding: 0.8rem 0;
+      font-size: 1rem;
+      color: #fff;
+      box-shadow: 0 -2px 10px rgba(0,229,255,0.2);
+      z-index: 5;
+    }
+
+    footer p {
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .section {
+        margin-top: 5rem;
+      }
+
+      .section h1 {
+        font-size: 2.4rem;
+      }
+
+      article.project-card h3 {
+        font-size: 1.4rem;
+      }
+
+      article.project-card p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION BAR ===== -->
+  <nav>
+    <h2>Luke Kyle Empleo</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutme.html">About Me</a></li>
+      <li><a href="skills.html">My Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section class="section">
+    <h1>My Projects</h1>
+
+    <div class="project-grid">
+      <article class="project-card">
+        <h3>💧 ADA Water Supply Information System</h3>
+        <p>
+          The ADA Water Supply Information System is a digital platform designed to manage, monitor, and optimize water distribution.
+        </p>
+      </article>
+
+      <article class="project-card">
+        <h3>⏰ Curfew tracking System</h3>
+        <p>
+          A curfew tracking system is designed to monitor individuals, typically minors, to ensure they adhere to curfew regulations.
+        </p>
+      </article>
+
+      <article class="project-card">
+        <h3>👻 Ghost Hunter Save The Girl</h3>
+        <p>
+          A ghost hunter must use their skills to track down and save a girl trapped in a haunted, cursed location.
+        </p>
+      </article>
+
+      <article class="project-card">
+        <h3>🌐 Portfolio Website</h3>
+        <p>
+          A personal responsive portfolio showcasing my skills and creativity.
+          Designed with smooth animations and glowing aesthetics.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 Luke Kyle Empleo | Built with ❤️</p>
+  </footer>
+
+</body>
+</html>

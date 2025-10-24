@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luke Kyle Empleo | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+body {
+  min-height: 50vh;
+  color: #fff;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+  font-size: 1.25rem; /* Increase this value to make the font larger */
+  padding-bottom: 15px; /* space for fixed footer */
+}
+
+/* Background Glow Animation */
+body::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 20% 20%, rgba(0,255,255,0.2), transparent 60%),
+              radial-gradient(circle at 80% 80%, rgba(255,0,150,0.2), transparent 60%);
+  animation: backgroundGlow 10s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes backgroundGlow {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.1) translate(-5%, -5%); }
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 1rem 3rem;
+  z-index: 10;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+}
+
+nav h2 {
+  color: #00e5ff;
+  font-size: 1.5rem;
+  text-shadow: 0 0 10px rgba(0,229,255,0.6);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #00e5ff;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li a:hover {
+  color: #00e5ff;
+}
+
+/* ===== MAIN SECTION ===== */
+.landing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1100px;
+  padding: 2rem;
+  text-align: left;
+  z-index: 1;
+  margin-top: 7rem;
+}
+
+/* Text */
+.content h1 {
+  font-size: 3.2rem;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+.content span {
+  color: #00e5ff;
+  text-shadow: 0 0 20px rgba(0,229,255,0.8);
+}
+
+.content p {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  max-width: 500px;
+  margin-bottom: 2.2rem;
+  opacity: 0.95;
+}
+
+/* Image */
+.image img {
+  width: 340px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #00e5ff;
+  box-shadow: 0 0 30px rgba(0,229,255,0.5);
+  animation: float 4s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.image img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 45px rgba(0,229,255,0.8);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ===== FIXED FOOTER ===== */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  padding: 0.8rem 0;
+  font-size: 1rem;
+  color: #fff;
+  box-shadow: 0 -2px 10px rgba(0,229,255,0.2);
+  z-index: 5;
+}
+
+footer p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .landing {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2.2rem;
+  }
+
+  .image img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .content h1 {
+    font-size: 2.4rem;
+  }
+
+  .content p {
+    font-size: 1.1rem;
+  }
+}
+  </style>
+</head>
+<body>
+  
+  <!-- ===== NAVIGATION BAR ===== -->
+  <nav>
+    <h2>Luke Kyle Empleo</h2>
+    <ul>
+      <li><a href="aboutme.html">About Me</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="skills.html">My Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== LANDING SECTION ===== -->
+  <div class="landing">
+    <div class="content">
+      <h1>Hello, I'm <span>Luke Kyle Empleo</span></h1>
+      <p>Im a 3rd-year student pursuing a Bachelor of Science in Information Technology at Cebu Eastern College. 
+        I'm passionate about learning web development and exploring front-end technologies like HTML, CSS, and JavaScript. 
+        Im building my skills through my studies and personal projects, with a focus on clean code, creative design, 
+        and problem-solving.</p>
+    </div>
+
+    <div class="image">
+      <img src="gwapo.png" alt="Luke Kyle Empleo">
+    </div>
+  </div>
+
+  <!-- ===== FIXED FOOTER ===== -->
+  <footer>
+    <p>© 2025 Luke Kyle Empleo | Built with ❤️</p>
+  </footer>
+
+</body>
+</html>
